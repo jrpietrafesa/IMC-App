@@ -35,7 +35,7 @@ fun Cabecalho() {
         )
         Text(
             text = "Índice de Massa Corporal",
-            color = Color.White,
+            color = Color.Gray,
         )
     }
 
