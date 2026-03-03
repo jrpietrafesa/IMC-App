@@ -36,7 +36,7 @@ fun Formulario(modifier: Modifier = Modifier) {
     {
         Text(
             text = "Informe os seus dados",
-            color = Color.White,
+            color = Color.Gray,
             fontSize = 22.sp,
             modifier = Modifier
                 .padding(bottom = 16.dp)
@@ -109,7 +109,7 @@ fun Formulario(modifier: Modifier = Modifier) {
                     .padding(end = 2.dp)
                     .weight(1f),
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = Color(0xFFC04038)
+                    containerColor = Color(0xFFD0544C)
                 )
             ) {
                 Text(
