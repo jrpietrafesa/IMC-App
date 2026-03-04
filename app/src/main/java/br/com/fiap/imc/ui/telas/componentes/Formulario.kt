@@ -32,7 +32,7 @@ import br.com.fiap.imc.ui.theme.IMCTheme
 
 
 @Composable
-fun Formulario(aoCalcular: () -> Unit) {
+fun Formulario(aoCalcular: (Double) -> Unit) {
 
     var peso by remember { mutableStateOf("") }
     var altura by remember { mutableStateOf("") }
@@ -137,7 +137,7 @@ fun Formulario(aoCalcular: () -> Unit) {
 
             //Botão 2 Calcular  **********************************
             Button(
-                onClick = aoCalcular,
+                onClick = aoCalcular(4.9),
                 shape = RoundedCornerShape(8.dp),
                         modifier = Modifier
                             .padding(start = 2.dp)

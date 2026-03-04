@@ -23,7 +23,7 @@ import androidx.compose.ui.unit.sp
 import br.com.fiap.imc.ui.theme.IMCTheme
 
 @Composable
-fun PainelResultado(modifier: Modifier = Modifier) {
+fun PainelResultado(imc: Double = 0.0) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -51,7 +51,7 @@ fun PainelResultado(modifier: Modifier = Modifier) {
                     .background(Color.Transparent)
             ) {
                 Text(
-                    text = "23.9",
+                    text = String.format("%.2f", imc),
                     fontSize = 48.sp,
                     fontWeight = FontWeight.Bold,
                 )
