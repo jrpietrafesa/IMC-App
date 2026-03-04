@@ -4,13 +4,12 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import br.com.fiap.imc.calcularIMC
 import br.com.fiap.imc.ui.telas.componentes.Cabecalho
 import br.com.fiap.imc.ui.telas.componentes.Formulario
 import br.com.fiap.imc.ui.telas.componentes.PainelResultado
@@ -31,7 +30,14 @@ fun TelaInicial() {
             verticalArrangement = Arrangement.SpaceEvenly
         ) {
             Cabecalho()
-            Formulario()
+            Formulario(
+                aoCalcular = {
+                println("Botão Calcular Clicado")
+                    val imc = calcularIMC(78,1.78)
+                    println("Seu IMC é: $imc")
+
+               }
+            )
             PainelResultado()
         }
     }
