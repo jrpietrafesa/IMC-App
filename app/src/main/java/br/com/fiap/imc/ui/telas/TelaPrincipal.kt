@@ -25,8 +25,7 @@ import androidx.compose.runtime.setValue
 fun TelaInicial() {
 
     var imcUsuario by remember {
-        mutableStateOf((0.0)},
-
+        mutableStateOf(0.0)}
 
     Box(
         modifier = Modifier

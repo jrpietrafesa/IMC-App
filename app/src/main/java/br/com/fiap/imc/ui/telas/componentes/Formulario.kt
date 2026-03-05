@@ -137,7 +137,7 @@ fun Formulario(aoCalcular: (Double) -> Unit) {
 
             //Botão 2 Calcular  **********************************
             Button(
-                onClick = aoCalcular(4.9),
+                onClick = {},
                 shape = RoundedCornerShape(8.dp),
                         modifier = Modifier
                             .padding(start = 2.dp)
