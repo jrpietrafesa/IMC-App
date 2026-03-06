@@ -20,6 +20,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import br.com.fiap.imc.classificarImc
 import br.com.fiap.imc.ui.theme.IMCTheme
 
 @Composable
@@ -37,7 +38,7 @@ fun PainelResultado(imc: Double = 0.0) {
             verticalArrangement = Arrangement.SpaceEvenly
         ) {
             Text(
-                text = "RESULTADOS",
+                text = "RESULTADO",
                 fontSize = 22.sp,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier
@@ -56,7 +57,7 @@ fun PainelResultado(imc: Double = 0.0) {
                     fontWeight = FontWeight.Bold,
                 )
                 Text(
-                    text = "Normal",
+                    text = classificarImc(imc),
                     fontSize = 14.sp,
                     fontWeight = FontWeight.Bold,
                     color = Color(0xFF12DE1D),

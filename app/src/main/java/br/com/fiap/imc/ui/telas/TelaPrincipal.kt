@@ -44,7 +44,7 @@ fun TelaInicial() {
                     imcUsuario = it
                }
             )
-            PainelResultado()
+            PainelResultado(imcUsuario)
         }
     }
 }

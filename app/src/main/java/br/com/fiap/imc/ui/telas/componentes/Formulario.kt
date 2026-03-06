@@ -51,7 +51,7 @@ fun Formulario(aoCalcular: (Double) -> Unit) {
             modifier = Modifier
                 .padding(bottom = 16.dp)
         )
-        //Formulario 1******************************
+        //Formulario 1 PESO ******************************
         OutlinedTextField(
             value = peso,
             onValueChange = {
@@ -70,7 +70,7 @@ fun Formulario(aoCalcular: (Double) -> Unit) {
                 imeAction = ImeAction.Next,
             ),
             colors = OutlinedTextFieldDefaults.colors(
-                focusedTextColor = Color.Blue,           // Cor do texto digitado
+                focusedTextColor = Color.Yellow,           // Cor do texto digitado
                 unfocusedTextColor = Color.Black,        // Cor do texto sem foco
                 focusedBorderColor = Color.White,        // Cor da borda quando selecionado
                 unfocusedBorderColor = Color.Gray,       // Cor da borda normal
@@ -80,7 +80,7 @@ fun Formulario(aoCalcular: (Double) -> Unit) {
         )
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Formulario 2 ******************************
+        // Formulario 2  ALTURA ******************************
         OutlinedTextField(
             value = altura,
             onValueChange = {
@@ -99,7 +99,7 @@ fun Formulario(aoCalcular: (Double) -> Unit) {
                 imeAction = ImeAction.Done,
             ),
             colors = OutlinedTextFieldDefaults.colors(
-                focusedTextColor = Color.Blue,           // Cor do texto digitado
+                focusedTextColor = Color.Yellow,           // Cor do texto digitado
                 unfocusedTextColor = Color.Black,        // Cor do texto sem foco
                 focusedBorderColor = Color.White,        // Cor da borda quando selecionado
                 unfocusedBorderColor = Color.Gray,       // Cor da borda normal
@@ -137,7 +137,9 @@ fun Formulario(aoCalcular: (Double) -> Unit) {
 
             //Botão 2 Calcular  **********************************
             Button(
-                onClick = {},
+                onClick = {
+                    aoCalcular(calcularIMC(peso.toInt(), altura.toDouble()))
+                },
                 shape = RoundedCornerShape(8.dp),
                         modifier = Modifier
                             .padding(start = 2.dp)
