@@ -24,8 +24,7 @@ class MainActivity : ComponentActivity() {
                     navController = navController,
                     startDestination = "home"){
                     composable("home"){ HomeScreen(navController)}
-                    composable("telaimc"){ TelaInicial()}
-
+                    composable("telaimc"){ TelaInicial(navController)}
                     }
                 }
             }

@@ -41,6 +41,8 @@ fun HomeScreen(navController: NavHostController) {
                 color = Color(0xFF999996)
             )
         }
+
+        //Botõao começar da Home
         Button(
             onClick = {
                 navController.navigate("telaImc")

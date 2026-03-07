@@ -1,5 +1,6 @@
 package br.com.fiap.imc.ui.telas.componentes
 
+import android.content.Context
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -21,6 +22,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
@@ -34,8 +36,17 @@ import br.com.fiap.imc.ui.theme.IMCTheme
 @Composable
 fun Formulario(aoCalcular: (Double) -> Unit) {
 
-    var peso by remember { mutableStateOf("") }
-    var altura by remember { mutableStateOf("") }
+    val context = LocalContext.current
+    val sharedPreferences = context.getSharedPreferences(
+        "dados",
+        Context.MODE_PRIVATE
+    )
+
+    val pesoSalvo = sharedPreferences.getString("peso", "")
+    val alturaSalva = sharedPreferences.getString("altura", "")
+
+    var peso by remember { mutableStateOf(pesoSalvo ?: "") } // Elvis operador ?: para lidar com null
+    var altura by remember { mutableStateOf(alturaSalva ?: "") } // Elvis operador ?: para lidar com null
 
 
     Column(
@@ -138,6 +149,11 @@ fun Formulario(aoCalcular: (Double) -> Unit) {
             //Botão 2 Calcular  **********************************
             Button(
                 onClick = {
+                    val  edit = sharedPreferences.edit()
+                    edit.putString("peso", peso)
+                    edit.putString("altura", altura)
+                    edit.apply()
+
                     aoCalcular(calcularIMC(peso.toInt(), altura.toDouble()))
                 },
                 shape = RoundedCornerShape(8.dp),
